@@ -4,15 +4,24 @@
     <script src="./src/world.js"></script> -->
 </head>
 <body>
+    <!-- 
+        webpack에서는 module의 개념을 잘 알아야 함ㅋ
+        webpack을 도입하면서 refactoring의 효과를 얻을 수 있음ㅋ
+        번들링도 같이 하고 싶음ㅋ
+        이런걸 할려면 webpack을 설치해야함ㅋ
+        node를 좀 해야하는데 npm init 으로 일단 해보자
+        npm i -d webpack webpack-cli
+        -d option은 dev(개발모드)에서 진행할 것
+        즉, webpack이랑 webpack-cli를 설치한다는 의미인거셈 
+
+        js의 입구에 있는 파일을 entry라고 함
+        webpack 실행: npx webpack임
+
+        npx webpack --entry ./src/index.js --output-path ./public/ --output-filename index_bundle.js
+        webpack을 실행할건데 --entry를 ./src/index.js 를 --output-path할거임 어디로? ./public/ --output-filename index_bundle.js로 ㅋ
+    -->
     <h1>Hello. Webpack</h1>
     <div id="root"></div>
-    <script type="module">
-        import hello_word from './src/hello.js'
-        import world_word from './src/world.js'
-        // webpack에서는 module의 개념을 잘 알아야 함ㅋ
-
-        // 이름이 충돌해서 world.js랑 hello.js랑 붙은건데, 뒤에 있는 world.js가 이긴 것.
-        document.querySelector('#root').innerHTML = hello_word + ' ' + world_word
-    </script>
+    <script src="./public/index_bundle.js"></script>
 </body>
 </html>
