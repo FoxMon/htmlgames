@@ -1,5 +1,7 @@
 # Webpack
 
+## Webpack Docs 참고
+
 Webpack Study
     - Webpack이란 무엇일까?
         - Webpack은 여러 개의 파일을 하나의 파일로 합쳐주는 모듈 번들러(Module bundler)이다.
@@ -25,4 +27,13 @@ Webpack Study
             - 이렇게 함으로써, 가능해진 것은 import 라고 하는 예전 Browser에서 동작하지 않던 
             - import라는 것이 오래된 브라우저에서 동작이 가능하도록 index_bundle.js가 동작이 가능하도록 bundling해준 것이다.
             - 따라서 오래된 Browser에서도 이 코드가 동작이 가능하다는 강력한 장점을 가지게 됐다.
-
+    
+    - Webpack의 재사용성 증가
+        - configuration을 추가하여 재사용성을 증가시키려면??
+            - 중복되는 webpack 명령어를 더욱 효율적으로 사용할 수 있도록 작성한다.
+        - webpack.config.js 만들기
+            - webpack.config.js 참고
+            - __dirname은 webpack.config.js가 위치한 경로를 알려주는 Node.js의 약속된 변수이다.
+            - 그 경로의 dist라고 하는 하위 경로에 우리의 최종적인 경로를 가져다 놓는 것. (현재 실습에서는 public임)
+            - filename: 'index_bundle.js'
+            - 이렇게 하면 npx webpack --config webpack.config.js의 명령어가 위의 npx webpack ~~ 의 명령어와 같은 의미이다.
