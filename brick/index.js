@@ -1,24 +1,10 @@
-// ui
-const Ui = {}
-Ui.show = function(state) {
-}
-////
-
-
-// brick
-class Brick {
-    constructor() {
-        this.bricks = []
-    }
-}
-////
-
 // canvas
 const canvas = document.getElementById("canvas")
 const canvasContext = canvas.getContext("2d")
 
 const width = 720
 const height = 800
+const uiOffset = 80
 
 canvas.width = width
 canvas.height = height
@@ -81,3 +67,42 @@ CanvasDraw.shuffle = function(arr) {
     return arr.sort(() => Math.random() - 0.5)
 }
 ////
+
+// ui
+class Ui {
+    constructor() {}
+
+    show(state) {
+        CanvasDraw.lineDraw(0, uiOffset, width, uiOffset)
+        CanvasDraw.lineDraw(0, height - uiOffset, width, height - uiOffset)
+        this.showBallCount(state)
+        this.showScore(state)
+    }
+
+    showBallCount(state) {
+        if(!state.ballMoving) {
+            canvasContext.fillText(
+                `x${state.ballCount}`,
+                state.ballPosition.x - 10,
+                height - 55
+            );
+        }
+    }
+
+    showScore(state) {
+        canvasContext.fillText(`Current Score: ${state.level}`, 30, uiOffset / 2 + 7)
+        canvasContext.fillText(
+            `Top Socre: ${state.bestLevel}`,
+            width - 150,
+            uiOffset / 2 + 7
+        )
+    }
+}
+////
+
+// game
+class Game {
+    constructor() {
+        this.state = {}
+    }
+}
