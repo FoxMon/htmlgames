@@ -19,6 +19,9 @@
 
         npx webpack --entry ./src/index.js --output-path ./public/ --output-filename index_bundle.js
         webpack을 실행할건데 --entry를 ./src/index.js 를 --output-path할거임 어디로? ./public/ --output-filename index_bundle.js로 ㅋ
+
+        이러면서 가능하진게 뭐냐면, import라고 하는 예전 Browser에서 동작하지 않던 것을 index_bundle.js에서 알아서 처리한 후,
+        오래된 브라우저에서도 동작이 가능하도록 bundling해준 것임. 즉, 오래된 Browser에서도 우리의 코드가 동작할 수 있는 강력한 장점을 가지게 됐다.
     -->
     <h1>Hello. Webpack</h1>
     <div id="root"></div>
