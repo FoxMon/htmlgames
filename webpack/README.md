@@ -37,3 +37,10 @@ Webpack Study
             - 그 경로의 dist라고 하는 하위 경로에 우리의 최종적인 경로를 가져다 놓는 것. (현재 실습에서는 public임)
             - filename: 'index_bundle.js'
             - 이렇게 하면 npx webpack --config webpack.config.js의 명령어가 위의 npx webpack ~~ 의 명령어와 같은 의미이다.
+
+    - Mode 도입
+        - 개발을 할 때와 배포를 할 때는 mode가 다르다.
+        - webpack.config.js (개발할 때)
+            - mode: "development" (개발모드)
+        - webpack.config.prod.js (배포할 때)
+            - mode: "production" (배포)
