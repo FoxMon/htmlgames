@@ -3,6 +3,7 @@
 ## Webpack Docs 참고
 
 Webpack Study
+
     - Webpack이란 무엇일까?
         - Webpack은 여러 개의 파일을 하나의 파일로 합쳐주는 모듈 번들러(Module bundler)이다.
         - 표준화된 모듈화 기법이 등장하면서 Webpakc을 사용해야 하는 경우가 많아졌다.
@@ -27,7 +28,7 @@ Webpack Study
             - 이렇게 함으로써, 가능해진 것은 import 라고 하는 예전 Browser에서 동작하지 않던 
             - import라는 것이 오래된 브라우저에서 동작이 가능하도록 index_bundle.js가 동작이 가능하도록 bundling해준 것이다.
             - 따라서 오래된 Browser에서도 이 코드가 동작이 가능하다는 강력한 장점을 가지게 됐다.
-    
+
     - Webpack의 재사용성 증가
         - configuration을 추가하여 재사용성을 증가시키려면??
             - 중복되는 webpack 명령어를 더욱 효율적으로 사용할 수 있도록 작성한다.
@@ -44,3 +45,21 @@ Webpack Study
             - mode: "development" (개발모드)
         - webpack.config.prod.js (배포할 때)
             - mode: "production" (배포)
+
+    - Loader 도입
+        - css를 bundling 해보자
+            - npm i -d == npm i --save-dev (같은 의미임)
+            - npm i --save-dev style-loader css-loader
+            - webpack.config.js 에서 module 추가
+                rules: [
+                    {
+                        test: /\.css$/,
+                        use: [
+                            'style-loader',
+                            'css-loader',
+                        ], 
+                    },
+                ],
+            - css-loader는 css파일을 읽어서 webpack으로 가져온다.
+            - style-loader는 이렇게 가져온 css코드를 style태그로 주입해주는 loader이다.
+            - 이 때 주의할 것은 css-loader가 먼저 실행되고, style-loader가 실행된다. 체이닝 돼있다.
