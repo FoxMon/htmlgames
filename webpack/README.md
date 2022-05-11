@@ -63,3 +63,16 @@ Webpack Study
             - css-loader는 css파일을 읽어서 webpack으로 가져온다.
             - style-loader는 이렇게 가져온 css코드를 style태그로 주입해주는 loader이다.
             - 이 때 주의할 것은 css-loader가 먼저 실행되고, style-loader가 실행된다. 체이닝 돼있다.
+
+    - Output 얻어내기
+        - 여러가지 형태의 output을 가질 수 있어야 한다.
+            - entry를 object형태로 수정한다.
+            - output을 [name]로 수정한다. (약속된 형태임)
+                entry: {
+                    index: "./src/index.js",
+                    about: "./src/about.js",
+                },
+                output: {
+                    path: path.resolve(__dirname, "public"),
+                    filename: "[name]_bundle.js",
+                },
