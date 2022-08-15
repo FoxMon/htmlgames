@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+h1 {
+    color: #fff;
+}
+
 body {
     background-image: url("./images/back.jpg");
     height: 100vh;
