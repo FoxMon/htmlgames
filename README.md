@@ -1,1 +1,1 @@
-# VanillaJS && Webpack
+# VanillaJS
